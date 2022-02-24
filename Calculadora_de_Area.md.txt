@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+public class CalculadoraDeArea {
+	float I, b, h, r, ba, s, c;
+	float resultado = 0f;
+	float pi = 3.14f;
+	int var;
+
+	public static void main(String args[]) {
+		CalculadoraDeArea ar = new CalculadoraDeArea();
+		ar.options();
+	
+	}
+	
+	public void options() {
+		Scanner a = new Scanner(System.in);
+		System.out.println(
+				"Digite o Objeto de qual área deve ser calculada \n1:Quadrado\n2:Retângulo\n3:Triângulo\n4:Círculo\n5:Trapezio");
+	
+		var = a.nextInt();
+		Area a1 = new Area();
+	
+		if (var == 1) {
+			System.out.println("Digite o lado do Quadrado");
+			s = a.nextFloat();
+			a1.Quadrado(s);
+			options();
+		} else if (var == 2) {
+			System.out.println("Digite o comprimento do Retângulo");
+			I = a.nextFloat();
+			System.out.println("Digite a amplitude do Retângulo");
+			b = a.nextFloat();
+			a1.Retangulo(I, b);
+			options();
+	
+		} else if (var == 3) {
+			System.out.println("Digite a altura do Triângulo");
+			h = a.nextFloat();
+			System.out.println("Digite a base do Triângulo");
+			ba = a.nextFloat();
+			a1.Triangulo(h, ba);
+			options();
+	
+		} else if (var == 4) {
+			System.out.println("Digite o raio do Círculo");
+			r = a.nextFloat();
+			a1.Circulo(r);
+			options();
+	
+		} else if (var == 5) {
+			System.out.println("Digite o lado A do Trapézio");
+			b = a.nextFloat();
+			System.out.println("Digite o lado B do Trapézio");
+			c = a.nextFloat();
+			System.out.println("Digite a altura do Trapézio");
+			h = a.nextFloat();
+			a1.Trapezio(b, c, h);
+			options();
+	
+		}
+	
+	}
+
+}
+
+class Area {
+	public void Quadrado(float s) {
+		float resultado = 0f;
+		resultado = s * s;
+		System.out.println("A Área do Quadrado é: " + resultado);
+	}
+
+	public void Retangulo(float I, float b) {
+		float resultado = 0f;
+		resultado = I * b;
+		System.out.println("A Área do Retângulo é: " + resultado);
+	}
+	
+	public void Triangulo(float h, float ba) {
+		float resultado = 0f;
+		resultado = 0.5f * h * ba;
+		System.out.println("A Área do Triângulo é: " + resultado);
+	}
+	
+	public void Circulo(float r) {
+		float resultado = 0f;
+		resultado = 3.14f * (r * r);
+		System.out.println("A Área do Círculo é: " + resultado);
+	}
+	
+	public void Trapezio(float b, float c, float h) {
+		float resultado = 0f;
+		resultado = (((b + c) / 2) * h);
+		System.out.println("A Área do Trapézio é: " + resultado);
+	
+	}
+
+}
